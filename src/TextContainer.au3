@@ -1,0 +1,10 @@
+Global $aTexts[$iMaxEnumIndex]
+       $aTexts[$eButtonHintNext]          = 'Next sprite image'
+       $aTexts[$eButtonHintPrevious]      = 'Previous sprite image'
+       $aTexts[$eButtonHintRerun]         = 'Rerun sprite animation'
+       $aTexts[$eButtonHintSave]          = 'Save sprite sheet to single images'
+       $aTexts[$eFolderSelectDialogText]  = 'Choose sprite sheet folder'
+       $aTexts[$eImage]                   = 'Image: '
+       $aTexts[$eSpeed]                   = 'Speed: '
+       $aTexts[$eWarning]                 = 'Warning'
+       $aTexts[$eWarningNoFolderSelected] = 'You have to choose a sprite sheet folder. Please try again.'
