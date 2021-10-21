@@ -1,21 +1,16 @@
 # Changelog
 
-All notable changes to "Au3SpriteSheetConverter" extension will be documented in this file.
+All notable changes to "Au3SpriteSheetConverter" will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-- Nothing yet.
-
-## [1.0.0] - 2021-09-16
+## [1.0.0] - 2021-10-21
 
 ### Added
 
 - All repository data and dependencies.
 
-[unreleased]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/releases/tag/v1.0.0
 
 ---

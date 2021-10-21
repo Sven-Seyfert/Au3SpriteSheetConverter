@@ -1,9 +1,13 @@
 ; compiler information for AutoIt
+#pragma compile(CompanyName, © SOLVE SMART)
+#pragma compile(FileVersion, 1.0.0)
+#pragma compile(LegalCopyright, © Sven Seyfert)
+#pragma compile(ProductName, Au3SpriteSheetConverter)
+#pragma compile(ProductVersion, 1.0.0 - 2021-10-21)
+
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
-#AutoIt3Wrapper_Outfile_x64=..\build\Au3SpriteSheetConverter
-#AutoIt3Wrapper_Res_Description=Au3SpriteSheetConverter (2021-09-16)
-#AutoIt3Wrapper_Res_Fileversion=1.0.0
+#AutoIt3Wrapper_Outfile_x64=..\build\Au3SpriteSheetConverter.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=y
 
