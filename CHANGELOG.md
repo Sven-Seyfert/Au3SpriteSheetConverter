@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Go to [legend](#legend---types-of-changes) for further information about the types of changes.
 
+## [Unreleased]
+
 ## [1.2.0] - 2022-02-11
 
 ### Added
@@ -46,6 +48,7 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 - Update copyright year to 2022 in LICENSE.md file.
 - CHANGELOG.md adjustment to scroll up and scroll down.
 
+[Unreleased]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.2.0...HEAD
 [1.2.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/releases/tag/v1.0.0
