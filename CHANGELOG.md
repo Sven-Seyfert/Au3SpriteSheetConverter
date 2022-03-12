@@ -11,6 +11,17 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 ## [Unreleased]
 
+## [1.3.0] - 2022-03-12
+
+### Added
+
+- Section "Unreleased" to changelog file.
+
+### Changed
+
+- All function names renamed to start with capital letter.
+- Version bump.
+
 ## [1.2.0] - 2022-02-11
 
 ### Added
@@ -48,7 +59,8 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 - Update copyright year to 2022 in LICENSE.md file.
 - CHANGELOG.md adjustment to scroll up and scroll down.
 
-[Unreleased]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Sven-Seyfert/Au3SpriteSheetConverter/releases/tag/v1.0.0

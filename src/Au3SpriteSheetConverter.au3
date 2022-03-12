@@ -1,9 +1,9 @@
 ; compiler information for AutoIt
 #pragma compile(CompanyName, © SOLVE SMART)
-#pragma compile(FileVersion, 1.2.0)
+#pragma compile(FileVersion, 1.3.0)
 #pragma compile(LegalCopyright, © Sven Seyfert)
 #pragma compile(ProductName, Au3SpriteSheetConverter)
-#pragma compile(ProductVersion, 1.2.0 - 2022-02-11)
+#pragma compile(ProductVersion, 1.3.0 - 2022-03-12)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
@@ -41,24 +41,24 @@ If $aInst[0][0] > 1 Then Exit
 
 
 ; processing -------------------------------------------------------------------
-Global $sSpriteSheetFolderPath  = _getSpriteSheetFolder()
-Global $sSpriteSheetFolderName  = _getJustFolderName($sSpriteSheetFolderPath)
-       $aListOfSpriteSheetFiles = _getFilesOfFolder($sSpriteSheetFolderPath)
-Global $iSpriteSheetFilesCount  = _getCount($aListOfSpriteSheetFiles)
+Global $sSpriteSheetFolderPath  = _GetSpriteSheetFolder()
+Global $sSpriteSheetFolderName  = _GetJustFolderName($sSpriteSheetFolderPath)
+       $aListOfSpriteSheetFiles = _GetFilesOfFolder($sSpriteSheetFolderPath)
+Global $iSpriteSheetFilesCount  = _GetCount($aListOfSpriteSheetFiles)
 
-_setSpriteSheetData($sSpriteSheetFolderName)
-_setSingleSpriteData()
-_setGuiData()
-_createGui()
-_drawSpriteSheet(1)
+_SetSpriteSheetData($sSpriteSheetFolderName)
+_SetSingleSpriteData()
+_SetGuiData()
+_CreateGui()
+_DrawSpriteSheet(1)
 
 While True
     Switch GUIGetMsg()
         Case $iEXIT
-            _guiDisposeAndExit()
+            _GuiDisposeAndExit()
 
         Case $cExitButton
-            _guiDisposeAndExit()
+            _GuiDisposeAndExit()
 
         Case $cPreviewButton
             If $iCurrentSpriteSheetFileIndex >= 1 Then
@@ -69,10 +69,10 @@ While True
                 $iCurrentSpriteSheetFileIndex = $iSpriteSheetFilesCount
             EndIf
 
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cReloadButton
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cNextButton
             If $iCurrentSpriteSheetFileIndex <= $iSpriteSheetFilesCount Then
@@ -83,34 +83,34 @@ While True
                 $iCurrentSpriteSheetFileIndex = 1
             EndIf
 
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cSaveButton
             $bShouldSaveToSingleSprite = True
 
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
             ShellExecute( $sSingleSpriteImagesPath )
 
             $bShouldSaveToSingleSprite = False
 
         Case $cDefaultColorButton
-            _setColor($sDefaultColor)
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _SetColor($sDefaultColor)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cRedColorButton
-            _setColor($sRedColor)
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _SetColor($sRedColor)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cGreenColorButton
-            _setColor($sGreenColor)
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _SetColor($sGreenColor)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cBlackColorButton
-            _setColor($sBlackColor)
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _SetColor($sBlackColor)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
 
         Case $cWhiteColorButton
-            _setColor($sWhiteColor)
-            _drawSpriteSheet($iCurrentSpriteSheetFileIndex)
+            _SetColor($sWhiteColor)
+            _DrawSpriteSheet($iCurrentSpriteSheetFileIndex)
     EndSwitch
 WEnd

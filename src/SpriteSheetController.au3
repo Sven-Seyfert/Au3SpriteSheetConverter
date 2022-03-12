@@ -1,4 +1,4 @@
-Func _createGdiPlusBuffer()
+Func _CreateGdiPlusBuffer()
     _GDIPlus_Startup()
 
     Global $hGraphics        = _GDIPlus_GraphicsCreateFromHWND(GUICtrlGetHandle($cPicture))
@@ -8,15 +8,15 @@ Func _createGdiPlusBuffer()
     _GDIPlus_GraphicsSetSmoothingMode($hGraphics, 0)
 EndFunc
 
-Func _drawSpriteSheet($i)
-    $sFileName = _getJustFileName($aListOfSpriteSheetFiles[$i])
+Func _DrawSpriteSheet($i)
+    $sFileName = _GetJustFileName($aListOfSpriteSheetFiles[$i])
 
     GUICtrlSetData($cImageNameLabel, $aTexts[$eImage] & $sFileName)
 
-    _drawEachSingleSprite($aListOfSpriteSheetFiles[$i])
+    _DrawEachSingleSprite($aListOfSpriteSheetFiles[$i])
 EndFunc
 
-Func _drawEachSingleSprite($sFileName)
+Func _DrawEachSingleSprite($sFileName)
     $hSpriteBitmap = _GDIPlus_ImageLoadFromFile($sFileName)
 
     For $iRow = 0 To $aSpriteSheet[$eHeight] - $aSingleSprite[$eHeight] Step $aSingleSprite[$eHeight]
@@ -24,22 +24,22 @@ Func _drawEachSingleSprite($sFileName)
             Local $sESC = '1B'
 
             If _IsPressed($sESC, 'user32.dll') Then
-                _guiDisposeAndExit()
+                _GuiDisposeAndExit()
             EndIf
 
-            _drawOnGui($iColumn, $iRow)
+            _DrawOnGui($iColumn, $iRow)
 
             Sleep(GUICtrlRead($cDrawSpeedInput))
         Next
     Next
 EndFunc
 
-Func _drawOnGui($iX, $iY)
+Func _DrawOnGui($iX, $iY)
     Local $sReplacedColor = StringReplace($vColor, '#', '0xFF')
-    Local $hBitmap        = _getSingleSprite($hSpriteBitmap, $iX, $iY, $aSingleSprite[$eWidth], $aSingleSprite[$eHeight])
+    Local $hBitmap        = _GetSingleSprite($hSpriteBitmap, $iX, $iY, $aSingleSprite[$eWidth], $aSingleSprite[$eHeight])
 
     If $bShouldSaveToSingleSprite Then
-        _saveSingleSprite($hBitmap)
+        _SaveSingleSprite($hBitmap)
     EndIf
 
     _GDIPlus_GraphicsClear($hBackBufferGraph, $sReplacedColor)
@@ -48,7 +48,7 @@ Func _drawOnGui($iX, $iY)
     _GDIPlus_BitmapDispose($hBitmap)
 EndFunc
 
-Func _getSingleSprite($hSpriteBitmap, $iX, $iY, $iW, $iH)
+Func _GetSingleSprite($hSpriteBitmap, $iX, $iY, $iW, $iH)
     Local $hTargetBitmap = _GDIPlus_BitmapCreateFromScan0($iW, $iH)
     Local $hGraphics     = _GDIPlus_ImageGetGraphicsContext($hTargetBitmap)
 
@@ -58,8 +58,8 @@ Func _getSingleSprite($hSpriteBitmap, $iX, $iY, $iW, $iH)
     Return $hTargetBitmap
 EndFunc
 
-Func _saveSingleSprite($hImage)
-    Local $sFileExtension            = _getJustFileExtension($sFileName)
+Func _SaveSingleSprite($hImage)
+    Local $sFileExtension            = _GetJustFileExtension($sFileName)
     Local $sFileExtensionLength      = StringLen($sFileExtension) + 1
     Local $sFileNameWithoutExtension = StringTrimRight($sFileName, $sFileExtensionLength)
     Local $sTimestamp                = '_' & @HOUR & @MIN & @SEC & '_' & @MSEC
@@ -69,7 +69,7 @@ Func _saveSingleSprite($hImage)
     _GDIPlus_ImageSaveToFile($hImage, $sSingleSpriteImagesPath & $sGeneratedFileName)
 EndFunc
 
-Func _guiDisposeAndExit()
+Func _GuiDisposeAndExit()
     _GDIPlus_BitmapDispose($hSpriteBitmap)
     _GDIPlus_BitmapDispose($hBackBufferBMP)
     _GDIPlus_GraphicsDispose($hBackBufferGraph)
