@@ -48,6 +48,6 @@ Func _GetJustFileExtension($sFileName)
     Return StringReverse(_StringBetween(StringReverse($sFileName), '', '.')[0])
 EndFunc
 
-Func _GetCount( $aList )
+Func _GetCount($aList)
     Return $aList[0]
 EndFunc
